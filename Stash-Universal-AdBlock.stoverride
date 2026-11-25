@@ -1,4 +1,4 @@
-# Stash 5.0 · 2026-11-24
+# Stash 5.0 · 2026-11-25
 # 合并快照。分流、URL 重写、响应体改写与本地静态响应均使用 Stash 原生配置。
 # 各来源原作者保留其署名。奶思的 Loon 专用脚本、远程响应文件及全局端口拦截未移植。
 # 已完整存入 App 本地的素材需由 App 自身清理或过期。
@@ -2387,9 +2387,6 @@ rules:
 - DOMAIN-SUFFIX,ad.cctv.com,REJECT
 - DOMAIN-SUFFIX,ad.cntv.cn,REJECT
 - DOMAIN-SUFFIX,ad-cdn.cctv.com,REJECT
-- DOMAIN-SUFFIX,ad-cdn_core.cctv.com,REJECT
-- DOMAIN-SUFFIX,ad_core.cctv.com,REJECT
-- DOMAIN-SUFFIX,ad_m.cctv.com,REJECT
 - DOMAIN-SUFFIX,adguanggao.eee114.com,REJECT
 - DOMAIN-SUFFIX,afp.qiyi.com,REJECT
 - DOMAIN-SUFFIX,cctv.adsunion.com,REJECT
@@ -2605,7 +2602,7 @@ rules:
 - DOMAIN-SUFFIX,rank.hit.china.com,REJECT
 - DOMAIN,ad.zijieapi.com,REJECT
 - DOMAIN,applog.zijieapi.com,REJECT
-- DOMAIN-SUFFIX,-normal-lq.zijieapi.com,REJECT
+- AND,((DOMAIN-KEYWORD,ads),(DOMAIN-KEYWORD,-normal-lq),(DOMAIN-SUFFIX,zijieapi.com)),REJECT
 - DOMAIN-SUFFIX,dm.bytedance.com,REJECT
 - DOMAIN-SUFFIX,xlog-va.byteoversea.com,REJECT
 - DOMAIN-SUFFIX,tosv.byted.org,REJECT
@@ -3473,10 +3470,6 @@ http:
   - 4gimg.map.qq.com
   - 789.kakamobi.cn
   - a-z*.rsscc.com
-  - a-zA-Z0-9_-.admobile.top
-  - a-zA-Z0-9_-.ranfenghd.com
-  - a-zA-Z0-9_-.tianmu.mobi
-  - a-zA-Z0-9_-.weathercn.com
   - a.line.me
   - a.sinopecsales.com
   - aag.enmonster.com
